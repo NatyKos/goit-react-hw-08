@@ -1,15 +1,15 @@
-import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
+// import { Route, Routes } from 'react-router-dom';
+// import { lazy } from 'react';
 import Layout from '../Layout/Layout';
 
-const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
+// const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 
 export default function AppBar() {
   return (
     <Layout>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<HomePage />} />
-      </Routes>
+      </Routes> */}
     </Layout>
   );
 }
