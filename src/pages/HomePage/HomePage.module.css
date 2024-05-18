@@ -1,0 +1,12 @@
+.homeText {
+  font-size: 30px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.header {
+  text-transform: uppercase;
+}

@@ -1,0 +1,11 @@
+.userMenu {
+  display: flex;
+  gap: 20px;
+  justify-items: center;
+  color: white;
+  margin-left: auto;
+  margin-right: 4px;
+}
+.welcome {
+  margin-top: 4px;
+}
