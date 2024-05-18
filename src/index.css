@@ -4,9 +4,14 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: rgba(211, 197, 239, 0.87);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    135deg,
+    rgb(3, 0, 58) 0%,
+    rgb(11, 11, 148) 35%,
+    rgb(5, 133, 159) 100%
+  );
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,17 +20,17 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #f6f6f8;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #6b70da;
 }
 
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
@@ -42,23 +47,23 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #696da3;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #6b70da;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  /* :root {
     color: #213547;
     background-color: #ffffff;
-  }
+  } */
   a:hover {
     color: #747bff;
   }
