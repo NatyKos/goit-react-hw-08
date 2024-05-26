@@ -1,5 +1,6 @@
 .register {
   display: flex;
   gap: 40px;
-  margin-left: auto;
+  /* justify-content: flex-end; */
+  /* margin-left: auto; */
 }

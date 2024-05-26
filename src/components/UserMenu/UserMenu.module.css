@@ -7,6 +7,8 @@
   margin-right: 4px;
 }
 .welcome {
-  margin-top: 5px;
   font-weight: 500;
+}
+.btnLogout {
+  margin-top: 10px;
 }
