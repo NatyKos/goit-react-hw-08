@@ -8,15 +8,22 @@
   width: 320px;
 }
 .formInput {
-  border: 1px solid gray;
-  border-radius: 6px;
-  margin-bottom: 4px;
+  background-color: #696da3;
+  color: rgb(231, 231, 243);
+  outline: none;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin-bottom: 10px;
   margin-top: 10px;
   height: 30px;
 }
+.formInput:focus {
+  outline: none;
+  border: 2px solid white;
+}
 .btnAddContact {
   margin-top: 6px;
-  border: 1px solid gray;
+  width: 120px;
 }
 .error {
   color: red;

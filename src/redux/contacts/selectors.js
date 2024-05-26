@@ -1,4 +1,4 @@
-import { selectNameFilter } from './slice';
+import { selectNameFilter } from '../filters/selectors';
 import { createSelector } from '@reduxjs/toolkit';
 
 export const selectLoading = state => {

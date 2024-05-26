@@ -4,8 +4,15 @@
 .searchInput {
   display: block;
   margin-top: 10px;
-  border: 1px solid gray;
-  border-radius: 6px;
+  background-color: #696da3;
+  color: rgb(231, 231, 243);
+  outline: none;
+  border: 1px solid white;
+  border-radius: 8px;
   height: 30px;
   width: 335px;
+}
+.searchInput:focus {
+  outline: none;
+  border: 2px solid white;
 }
