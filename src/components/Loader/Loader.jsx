@@ -12,7 +12,7 @@ export default function Loader() {
         wrapperStyle={{}}
         wrapperClass="magnifying-glass-wrapper"
         glassColor="#c0efff"
-        color="rgb(79, 41, 6)"
+        color="rgb(83, 8, 130)"
       />
     </div>
   );
