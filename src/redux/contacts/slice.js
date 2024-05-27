@@ -58,3 +58,22 @@ const contactsSlice = createSlice({
 });
 
 export default contactsSlice.reducer;
+
+// .addCase(patchContact.pending, state => {
+//     state.loading = true;
+//     state.error = false;
+//   })
+//   .addCase(patchContact.fulfilled, (state, action) => {
+//     state.loading = false;
+//     const editContact = state.items.findIndex(contact => {
+//       contact.id === action.payload.id;
+//     })(action.payload);
+//     if (editContact) {
+//       state.items[editContact] = action.payload;
+//     }
+//     state.error = false;
+//   })
+//   .addCase(patchContact.rejected, state => {
+//     state.loading = false;
+//     state.error = true;
+//   }),
