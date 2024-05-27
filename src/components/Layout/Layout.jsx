@@ -1,5 +1,4 @@
 import AppBar from '../AppBar/AppBar';
-// import Loader from '../Loader/Loader';
 import css from './Layout.module.css';
 import { Toaster } from 'react-hot-toast';
 

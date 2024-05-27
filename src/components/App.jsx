@@ -6,6 +6,9 @@ import { refreshUser } from '../redux/auth/operations';
 import { selectIsRefreshing } from '../redux/auth/selectors';
 import Loader from '../components/Loader/Loader';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Error from '../components/Error/Error';
+import { selectLoading, selectError } from '../redux/contacts/selectors';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() =>
@@ -16,61 +19,52 @@ const ContactsPage = lazy(() => import('../pages/ContactsPage/ContactsPage'));
 
 export default function App() {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-  return isRefreshing ? (
+  return isRefreshing || isLoading ? (
     <Loader />
   ) : (
-    <Layout>
-      <Suspense fallback={null}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route
-            path="/register"
-            element={<RestrictedRoute component={<RegistrationPage />} />}
-          />
-          <Route
-            path="/login"
-            element={<RestrictedRoute component={<LoginPage />} />}
-          />
-          <Route path="/contacts" element={<ContactsPage />} />
-        </Routes>
-      </Suspense>
-    </Layout>
+    (isError && <Error />,
+    (
+      <Layout>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  component={<RegistrationPage />}
+                  redirectTo="/"
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute
+                  component={<LoginPage />}
+                  redirectTo="/contacts"
+                />
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute
+                  component={<ContactsPage />}
+                  redirectTo="/login"
+                />
+              }
+            />
+          </Routes>
+        </Suspense>
+      </Layout>
+    ))
   );
 }
-
-// import ContactForm from '../ContactForm/ContactForm';
-// import ContactList from '../ContactList/ContactList';
-// import SearchBox from '../SearchBox/SearchBox';
-// import Loader from '../Loader/Loader';
-// import Error from '../Error/Error';
-// import css from './App.module.css';
-// import { selectLoading } from '../../redux/contactsSlice';
-// import { selectError } from '../../redux/contactsSlice';
-// import { fetchContacts } from '../../redux/contactsOps';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-
-// export default function App() {
-//   const dispatch = useDispatch();
-//   const isLoading = useSelector(selectLoading);
-//   const isError = useSelector(selectError);
-
-//   useEffect(() => {
-//     dispatch(fetchContacts());
-//   }, [dispatch]);
-//   return (
-//     <div>
-//       <h1 className={css.title}>Phonebook</h1>
-//       {isLoading && <Loader />}
-//       {isError && <Error />}
-//       <ContactForm />
-//       <SearchBox />
-//       <ContactList />
-//     </div>
-//   );
-// }
